@@ -12,13 +12,13 @@ jobs:
         uses: actions/checkout@v2
       - name: setup demo
         run: |
-          mkdir test
-          touch test/oof.txt
-          touch test/.dot.txt
+          mkdir test3
+          touch test3/oof.txt
+          touch test3/.dot.txt
       - name: Copy with user/pw
         uses: ./
         with:
-          local: test/oof.txt
+          local: test3/oof.txt
           remote: scp/user/pw/oof.txt
           host: ${{ secrets.HOST }}
           username: ${{ secrets.SSH_USER }}
