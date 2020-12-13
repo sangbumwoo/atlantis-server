@@ -16,7 +16,7 @@ jobs:
           touch test3/oof.txt
           touch test3/.dot.txt
       - name: Copy with user/pw
-        uses: sangbumwoo/atlantis-server@master
+        uses: garygrossgarten/github-action-scp@release
         with:
           local: test3/oof.txt
           remote: scp/user/pw/oof.txt
