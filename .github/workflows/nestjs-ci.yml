@@ -23,3 +23,11 @@ jobs:
     - run: npm test
     - run : echo "completed"
     - run: ls -al
+    - name: Copy folder content recursively to remote
+      uses: garygrossgarten/github-action-scp@release
+      with:
+        local: dist
+        remote: atlantis-server
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.SSH_USER }}
+        password: ${{ secrets.PASSWORD }}
