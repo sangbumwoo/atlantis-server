@@ -7,24 +7,28 @@ export class UsersController {
 
     constructor(private service: UsersService) {}
 
-    @Get(':id')
-    get(@Param() params) {
-        return this.service.getUser(params.id);
-    }
-
     @Post()
     create(@Body() user: User) {
-        console.log(user);
-        return this.service.createUser(user);
+        return this.service.create(user);
+    }
+
+    @Get()
+    findAll() {
+        return this.service.findAll();
+    }
+
+    @Get(':id')
+    findOne(@Param('id') id: string) {
+        return this.service.findOne(id);
     }
 
     @Put()
     update(@Body() user: User) {
-        return this.service.updateUser(user);
+        return this.service.update(user);
     }
 
     @Delete(':id')
-    deleteUser(@Param() params) {
-        return this.service.deleteUser(params.id);
+    delete(@Param('id') id: string) {
+        return this.service.delete(id);
     }
 }
