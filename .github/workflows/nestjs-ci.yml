@@ -15,11 +15,11 @@ jobs:
           mkdir test3
           touch test3/oof.txt
           touch test3/.dot.txt
-      - name: Copy with user/pw
-        uses: garygrossgarten/github-action-scp@release
-        with:
-          local: test3/oof.txt
-          remote: oof.txt
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.SSH_USER }}
-          password: ${{ secrets.PASSWORD }}        
+#       - name: Copy with user/pw
+#         uses: garygrossgarten/github-action-scp@release
+#         with:
+#           local: test3/oof.txt
+#           remote: oof.txt
+#           host: ${{ secrets.HOST }}
+#           username: ${{ secrets.SSH_USER }}
+#           password: ${{ secrets.PASSWORD }}        
